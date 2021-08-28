@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FARM PROJECT</title>
+	<link rel="stylesheet" href="4/w3.css">
+<body>
+<div class="w3-container w3-padding-32">
+
+<div class="w3-card-4 w3-round" style="width:50%;">
+
+<form id="form" class="w3-container">
+	<p>
+	<label>First Name</label>
+	<input class="w3-input w3-border" type="text" name="" id="fname">
+    <span id="fnam"></span>
+</p>
+
+<p>
+	<label>Last Name</label>
+<input type="text" class="w3-input w3-border" name="" id="lname">	
+<span id="lnam"></span>
+</p>
+
+<p>
+	<label>Email</label>
+	<input type="text" class="w3-input w3-border" name="" id="email" onkeydown="validation()" >
+	<span id="text"></span>
+</p>
+
+<p>
+	<label>Password</label>
+	<input type="password" class="w3-input w3-border"  name="" id="Pword">
+<span id="pass"></span>
+</p>
+
+<p>
+	<button onclick="valve()" class="w3-button w3-border" style="width:100%;">Submit</button>
+	</p>
+
+</form>
+
+</div>
+
+</div>
+<script type="text/javascript">
+	function validation() {
+		var form= document.getElementById("form");
+	    var email= document.getElementById("email").value;
+		var text= document.getElementById("text");
+		var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+	if (email.match(pattern)) 
+		{
+         form.classList.add("valid");
+          form.classList.remove("invalid");
+          text.innerHTML="Your email address is valid";
+		} 
+		else {
+         form.classList.remove("valid");
+         form.classList.add("invalid");
+         text.innerHTML="Looks like this is not an email";
+		}	
+    if (email== "") 
+		{
+         form.classList.remove("valid");
+          form.classList.remove("invalid");
+          text.innerHTML="  ";
+		} 	
+
+
+	}
+function valve(){
+	var f= document.getElementById("fname");
+	    var l= document.getElementById("lname");
+		var t= document.getElementById("email");
+		var p = document.getElementById("Pword");
+		var h = document.getElementById("fnam");
+	if (f =="") {
+      h.innerHTML="First name can not be empty";
+	}
+	
+
+}
+
+
+</script>
+
+</body>
+</html>
